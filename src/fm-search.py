@@ -20,16 +20,16 @@ def main():
             print("Index file doesn't exist")
             os.abort()
 
-        t_start = time.clock()
+        t_start = time.process_time()
         
         idx = fmindex.load(sys.argv[1])
-        t_load = time.clock()
+        t_load = time.process_time()
         
         c = idx.count(sys.argv[2])
-        t_count = time.clock()
+        t_count = time.process_time()
         
         m = idx.search(sys.argv[2])
-        t_search = time.clock()
+        t_search = time.process_time()
         print("load: %sms" % diff_time(t_start, t_load))
         print("count: %sms" % diff_time(t_load, t_count))
         print(str(c))
